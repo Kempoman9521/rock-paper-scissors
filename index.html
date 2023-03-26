@@ -16,19 +16,42 @@
   function computerChoice() {
      let choice = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
      if (choice === 1) {
-        return "rock!";
+        return "rock";
 
      } else if (choice === 2) {
-       return "paper!";
+       return "paper";
 
      } else if (choice === 3) { 
-       return "scissors!";
+       return "scissors";
      }
 
   }
+console.log(computerChoice());
+
+const computerSelector = computerChoice();
+const playerChoice = "rock";
+function gameRound(playerChoice, computerSelector) {
+    if (computerSelector === "scissors" && playerChoice === "rock") {
+      return "player wins";
+
+    } else if (computerSelector === "rock" && playerChoice === "paper") {
+      return "you loose"
+
+    }
+    
+    
+}
+
+console.log(gameRound(playerChoice, computerSelector));
 
 
 
+// how do I compare playerChoice and computerSelector//
+// I need to find a way to set up this conditional statement // 
+// let computerSelector randomly choose//
+// if its value is rock! make another condition that compars agains playerChoice//
+// if its value is paper! make another condition that compars agains playerChoice//
+// if its value is scissors! make another condition that compars agains playerChoice//
 
 
     </script>
