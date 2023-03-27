@@ -26,23 +26,33 @@
      }
 
   }
-console.log(computerChoice());
 
 const computerSelector = computerChoice();
-const playerChoice = "rock";
 function gameRound(playerChoice, computerSelector) {
-    if (computerSelector === "scissors" && playerChoice === "rock") {
-      return "player wins";
+    if (playerChoice === "scissors" && computerSelector === "rock") {
+      return "you lose!";
 
-    } else if (computerSelector === "rock" && playerChoice === "paper") {
-      return "you loose"
+    } else if (playerChoice === "rock" && computerSelector === "paper") {
+      return "You lose!";
 
+    } else if (playerChoice === "paper" && computerSelector === "scissors") {
+      return "you loose!";
+
+    } else if (playerChoice === "scissors" && computerSelector === "paper") {
+      return "you win!";
+
+    } else if (playerChoice === "rock" && computerSelector === "scissors") {
+      return "you win!";
+
+    } else if (playerChoice === "paper" && computerSelector === "rock") {
+      return "you win!";
+
+    } else if (playerChoice === computerSelector) {
+      return "tie";
     }
-    
-    
 }
+console.log(computerSelector);
 
-console.log(gameRound(playerChoice, computerSelector));
 
 
 
