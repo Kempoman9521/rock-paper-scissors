@@ -10,12 +10,20 @@
 
     <script>
 
-  
+// what is the problem?: How do you make a function that returns a 1 of 3 variable with a string
+// value at random? //
+
+// declar function named computerChoice //
+ // declar variable named "choice" its value is a operation and it type is a number //
+// declar an if else conditional //
+// if choice is 1 return text "rock" //
+//if choice is 2 return text "paper"//
+// if choice is 3 return text "scissors"//
 
 
-  function computerChoice() {
+  function computerChoice() { 
      let choice = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-     if (choice === 1) {
+     if (choice === 1) { t
         return "rock";
 
      } else if (choice === 2) {
@@ -27,7 +35,30 @@
 
   }
 
-const computerSelector = computerChoice();
+// I need to make a function that plays a single round of rock paper scissors using the 
+// return value of computer choice // 
+
+// declar variable named computerSelector, it holds the retun value of computerChoice //
+// declar variable named playerChoice whos value is "rock" //
+// declar function named gameRound that takes two parameters playerChoice and computerSelector //
+// delcar an if else conditional //
+// if playerChoice is scissors and computerSelector is rock//
+// return "you lose!" //
+// if playerChoice is rock and computerSelector is paper//
+// return "you lose!"//
+// if playerChoice is paper and computerSelector is scissors //
+// return "you lose!"//
+// if playerChoice is scissors and computerSelector is paper //
+// return "you win!" //
+// if playerChoice is rock and computerSelector is scissors //
+// return "you win!" //
+// if playerChoice is paper and computerSelector is rock //
+// return "you win!" //
+// if playerChoice matches computerSelector //
+// return tie //
+
+const computerSelector = computerChoice(); // 
+
 function gameRound(playerChoice, computerSelector) {
     if (playerChoice === "scissors" && computerSelector === "rock") {
       return "you lose!";
@@ -36,7 +67,7 @@ function gameRound(playerChoice, computerSelector) {
       return "You lose!";
 
     } else if (playerChoice === "paper" && computerSelector === "scissors") {
-      return "you loose!";
+      return "you lose!";
 
     } else if (playerChoice === "scissors" && computerSelector === "paper") {
       return "you win!";
