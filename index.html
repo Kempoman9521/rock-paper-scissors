@@ -58,14 +58,14 @@
 // return tie //
 
 const computerSelector = computerChoice(); // 
-const playerChoice = "rock";
+const playerChoice = prompt("Rock, Paper, Scissors!").toLowerCase();
 
 function winLose(playerChoice, computerSelector) {
     if (playerChoice === "scissors" && computerSelector === "rock") {
       return "you lose!";
 
     } else if (playerChoice === "rock" && computerSelector === "paper") {
-      return "You lose!";
+      return "you lose!";
 
     } else if (playerChoice === "paper" && computerSelector === "scissors") {
       return "you lose!";
@@ -83,23 +83,15 @@ function winLose(playerChoice, computerSelector) {
       return "tie";
     }
 }
-// how do I compare playerChoice and computerSelector//
-// I need to find a way to set up this conditional statement // 
-// let computerSelector randomly choose//
-// if its value is rock! make another condition that compars agains playerChoice//
-// if its value is paper! make another condition that compars agains playerChoice//
-// if its value is scissors! make another condition that compars agains playerChoice//
+
+console.log(winLose(playerChoice, computerSelector));
 
 
 
 
-function game() {
-
-}
 
 
-
-
+ 
 
 
     </script>
