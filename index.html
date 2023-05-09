@@ -5,20 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <h1>Rock paper scissors game!</h1>
+<div id="btn-container">
+<button class="rock">Rock</button>
+<button class="paper">Paper</button>
+<button class="scissors">Scissors</button>
+</div>
+<div id="text-content">
+<div class = "divMessage"></div>
+<div class="playerScore"></div>
+<div class="compScore"></div>
+</div>
+  <div class="endGame"></div>
     <script>
 
-// what is the problem?: How do you make a function that returns one of three variable with a string
-// value at random? //
-
-// declar function named computerChoice //
- // declar variable named "choice" its value is an operation and its type is a number //
-// declar an if else conditional //
-// if choice is 1 return text "rock" //
-//if choice is 2 return text "paper"//
-// if choice is 3 return text "scissors"//
 
 
   function computerChoice() { 
@@ -35,56 +38,141 @@
 
   }
 
-// I need to make a function that plays a single round of rock paper scissors using the 
-// return value of computer choice // 
+const computerSelector = computerChoice(); 
 
-// declar variable named computerSelector, it holds the retun value of computerChoice //
-// declar variable named playerChoice whos value is "rock" //
-// declar function named gameRound that takes two parameters playerChoice and computerSelector //
-// delcar an if else conditional //
-// if playerChoice is scissors and computerSelector is rock//
-// return "you lose!" //
-// if playerChoice is rock and computerSelector is paper//
-// return "you lose!"//
-// if playerChoice is paper and computerSelector is scissors //
-// return "you lose!"//
-// if playerChoice is scissors and computerSelector is paper //
-// return "you win!" //
-// if playerChoice is rock and computerSelector is scissors //
-// return "you win!" //
-// if playerChoice is paper and computerSelector is rock //
-// return "you win!" //
-// if playerChoice matches computerSelector //
-// return tie //
 
-const computerSelector = computerChoice(); // 
-const playerChoice = prompt("Rock, Paper, Scissors!").toLowerCase();
-
-function winLose(playerChoice, computerSelector) {
+ function winLose(playerChoice, computerSelector) {
     if (playerChoice === "scissors" && computerSelector === "rock") {
-      return "you lose!";
-
+      const gameMessage = "you lose!";
+      return gameMessage;
     } else if (playerChoice === "rock" && computerSelector === "paper") {
-      return "you lose!";
-
+      const gameMessage = "you lose!";
+      return gameMessage;
     } else if (playerChoice === "paper" && computerSelector === "scissors") {
-      return "you lose!";
-
+      const gameMessage = "you lose!";
+      return gameMessage;
     } else if (playerChoice === "scissors" && computerSelector === "paper") {
-      return "you win!";
-
+      const gameMessage = "you win!";
+      return gameMessage;
     } else if (playerChoice === "rock" && computerSelector === "scissors") {
-      return "you win!";
-
+      const gameMessage = "you win!";
+      return gameMessage;
     } else if (playerChoice === "paper" && computerSelector === "rock") {
-      return "you win!";
-
+      const gameMessage = "you win!";
+      return gameMessage;
     } else if (playerChoice === computerSelector) {
-      return "tie";
+      const gameMessage = "tie";
+      return gameMessage;
     }
+    
 }
 
-console.log(winLose(playerChoice, computerSelector));
+const winnerLoser = document.querySelector(".endGame")
+
+const matchResult = document.querySelector(".divMessage");
+
+const playerRock = document.querySelector(".rock")
+
+const playerElementScore = document.querySelector(".playerScore");
+
+const compScore = document.querySelector(".compScore");
+
+let playerScore = 0;
+let computerScore = 0;
+
+ playerRock.addEventListener("click", () => {
+  const playerChoice = "rock";
+  const computerSelector = computerChoice (); 
+ const result = winLose(playerChoice, computerSelector);
+ matchResult.textContent = result;
+ if(result ==="you win!") {
+  if(playerScore < 5 && computerScore < 5) {
+  playerScore += 1;
+  playerElementScore.textContent = `player score: ${playerScore}`;
+  }
+  if(playerScore >= 5) {
+    computerScore = 0;
+      playerScore = 0;
+    winnerLoser.textContent = "you are the winner!";
+  }
+   } else if (result ==="you lose!") {
+    if(playerScore < 5 && computerScore < 5) {
+      computerScore += 1;
+      compScore.textContent = `computer score: ${computerScore}`;
+    }
+    if (computerScore >= 5) {
+      computerScore = 0;
+      playerScore = 0;
+      winnerLoser.textContent = "You have lost!"
+    }
+
+   }
+} );
+
+const playerPaper = document.querySelector(".paper");
+
+playerPaper.addEventListener("click", () => {
+  let score = 0;
+  const playerChoice = "paper";
+  const computerSelector = computerChoice();
+ const result = winLose(playerChoice, computerSelector);
+ matchResult.textContent = result;
+ if(result ==="you win!") {
+  if(playerScore < 5 && computerScore < 5) {
+  playerScore += 1;
+  playerElementScore.textContent = `player score: ${playerScore}`;
+  }
+  if(playerScore >= 5) {
+    computerScore = 0;
+      playerScore = 0;
+    winnerLoser.textContent = "you are the winner!";
+  }
+   } else if (result ==="you lose!") {
+    if(playerScore < 5 && computerScore < 5) {
+      computerScore += 1;
+      compScore.textContent = `computer score: ${computerScore}`;
+    }
+    if (computerScore >= 5) {
+      computerScore = 0;
+      playerScore = 0;
+      winnerLoser.textContent = "You have lost!"
+    }
+
+   }
+});
+
+const playerScissors = document.querySelector(".scissors");
+
+playerScissors.addEventListener("click", () => {
+  const playerChoice = "scissors";
+  const computerSelector = computerChoice();
+ const result = winLose(playerChoice, computerSelector);
+ matchResult.textContent = result;
+ if(result ==="you win!") {
+  if(playerScore < 5 && computerScore < 5) {
+  playerScore += 1;
+  playerElementScore.textContent = `player score: ${playerScore}`;
+  }
+  if(playerScore >= 5) {
+    computerScore = 0;
+      playerScore = 0;
+    winnerLoser.textContent = "you are the winner!";
+  }
+   } else if (result ==="you lose!") {
+    if(playerScore < 5 && computerScore < 5) {
+      computerScore += 1;
+      compScore.textContent = `computer score: ${computerScore}`;
+    }
+    if (computerScore >= 5) {
+      computerScore = 0;
+      playerScore = 0;
+      winnerLoser.textContent = "You have lost!"
+    }
+   }
+} );
+
+
+
 
 
 

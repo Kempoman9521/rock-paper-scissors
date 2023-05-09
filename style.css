@@ -1,0 +1,46 @@
+body {
+    height: 100vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#btn-container {
+    display: flex;
+    justify-content:space-around;
+    padding: 30px;
+    background-color:#599B5E;
+}
+
+button {
+    border-radius: 15px;
+    padding: 10px;
+    background-color:#519075;
+    border-color:#496683;
+}
+
+#text-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.endGame {
+    display: flex;
+    justify-content: center;
+    font-size:30px;
+    flex: 1;
+}
+
+.endGame, #text-content {
+    background-color: #496683;
+}
+h1 {
+    display: flex;
+    justify-content: center;
+    background-color: #599B5E;
+    margin: 0;
+}
